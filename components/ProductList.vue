@@ -18,9 +18,11 @@
 <script setup lang="ts">
 
 const props = defineProps(['productsListData']);
+const router = useRouter()
+const route = useRoute()
 
 const moveToDetailPage = (productId: number) => {
-
+  router.push({ path: `detail/${productId}` })
 };
 
 </script>
