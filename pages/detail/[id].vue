@@ -9,9 +9,9 @@
         />
       </div>
       <div class="side-panel">
-        <p>name: {{ productInfo.name }}</p>
-        <p>price: {{ productInfo.price }}</p>
-        <button type="button">Add to Cart</button>
+        <p>{{ productInfo.name }}</p>
+        <p>{{ productInfo.price }}</p>
+        <!-- <button type="button">Add to Cart</button> -->
       </div>
     </div>
   </div>

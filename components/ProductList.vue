@@ -1,12 +1,19 @@
 <template>
   <div class="app">
     <main>
-      <div>
-        <input type="text">
-      </div>
+      <SearchInput :search-keyword="searchKeyword" />
       <ul>
-        <li class="item flex" v-for="product in productsListData" :key="product.id" @click="moveToDetailPage(product.id)">
-          <img class="product-image" :src="`${product.imageUrl}?random=${Math.random()}`" :alt="product.name">
+        <li
+          class="item flex"
+          v-for="product in productsListData"
+          :key="product.id"
+          @click="moveToDetailPage(product.id)"
+        >
+          <img
+            class="product-image"
+            :src="`${product.imageUrl}?random=${Math.random()}`"
+            :alt="product.name"
+          />
           <p>{{ product.name }}</p>
           <span>{{ product.price }}</span>
         </li>
@@ -16,15 +23,14 @@
 </template>
 
 <script setup lang="ts">
-
-const props = defineProps(['productsListData']);
-const router = useRouter()
-const route = useRoute()
+const props = defineProps(["productsListData"]);
+const searchKeyword = ref("");
+const router = useRouter();
+const route = useRoute();
 
 const moveToDetailPage = (productId: number) => {
-  router.push({ path: `detail/${productId}` })
+  router.push({ path: `detail/${productId}` });
 };
-
 </script>
 
 <style scoped>
